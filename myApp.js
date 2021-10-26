@@ -7,6 +7,7 @@ const helmet = require('helmet');
 app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({action: 'deny'}));
 app.use(helmet.xssFilter());
+app.use(helmet.noSniff());
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 app.use('/_api', api);
