@@ -9,6 +9,7 @@ app.use(helmet.frameguard({action: 'deny'}));
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.ieNoOpen());
+app.use(helmet.dnsPrefetchControl());
 const ninetyDaysInSeconds = 90*24*60*60;
 const timeInSeconds = ninetyDaysInSeconds;
 app.use(helmet.hsts({maxAge: timeInSeconds, force: true}));
